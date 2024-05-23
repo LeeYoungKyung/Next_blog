@@ -3,8 +3,7 @@ import { connectDB } from '@/util/database';
 export default async function List() {
   const db = (await connectDB).db('forum');
   let result = await db.collection('post').find().toArray();
-  console.log(result);
-  console.log(result[0].title);
+
   //object 형태의 문자로 하고싶으면 json
   return (
     <div className='list-bg'>
