@@ -1,4 +1,7 @@
 import { connectDB } from '@/util/database';
+import Link from 'next/link';
+import DetailLink from './DetailLink';
+import ListItem from './ListItem';
 
 export default async function List() {
   const db = (await connectDB).db('forum');
@@ -7,28 +10,7 @@ export default async function List() {
   //object 형태의 문자로 하고싶으면 json
   return (
     <div className='list-bg'>
-      {result.map((item, index) => (
-        <div className='list-item' key={index}>
-          <h4>{item.title}</h4>
-          <p>{item.content}</p>
-        </div>
-      ))}
+      <ListItem result={result} />
     </div>
-
-    //Map 함수로 바꾸면 이렇게 됨다
-    // <div className='list-bg'>
-    //   <div className='list-item'>
-    //     <h4>{result[0].title}</h4>
-    //     <p>{result[0].content}</p>
-    //   </div>
-    //   <div className='list-item'>
-    //     <h4>{result[1].title}</h4>
-    //     <p>{result[1].content}</p>
-    //   </div>
-    //   <div className='list-item'>
-    //     <h4>{result[2].title}</h4>
-    //     <p>{result[2].content}</p>
-    //   </div>
-    // </div>
   );
 }
