@@ -7,11 +7,5 @@ export default async function Home() {
   const db = client.db('forum');
   let result = await db.collection('post').find().toArray();
 
-  return (
-    <div>
-      <Link href={'/list'}>list로 가기</Link>
-      <br></br>
-      main page
-    </div>
-  );
+  return <div></div>;
 }
