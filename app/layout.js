@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
+export const dynamic = 'force-dynamic';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className='navbar'>
           <Link href='/' className='logo'>
-            Appleforum
+            MyBlog
           </Link>
           <Link href='/list'>List</Link>
           <Link href='/write'>Write</Link>
