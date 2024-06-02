@@ -15,7 +15,7 @@ export default async function List() {
 
   //object 형태의 문자로 하고싶으면 json
   return (
-    <div className='list-bg'>
+    <div className='list-bg  bg-red-500'>
       <ListItem result={result} />
       {/* <ListItem result={result} />
       작명 = {전송할 데이터} == 자식컴포넌트에 props로 전달

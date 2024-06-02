@@ -37,6 +37,7 @@ body {
 .list-bg {
   background: rgb(249, 250, 255);
   padding: 10px;
+  marker-start: none;
 }
 .list-item {
   background: white;
@@ -58,6 +59,7 @@ body {
   margin: 0;
 }
 .write-css {
+  text-align: -webkit-center;
   padding: 20px;
 }
 input {
@@ -92,4 +94,15 @@ a {
 .list-item {
   opacity: 1;
   transition: all 1s;
+}
+.titleInput {
+  height: 4rem;
+  width: -webkit-fill-available;
+  border: inset;
+  border-color: gray;
+}
+.contentInput {
+  width: -webkit-fill-available;
+  height: 30rem;
+  border: inset;
 }

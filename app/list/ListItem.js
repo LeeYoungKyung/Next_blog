@@ -6,7 +6,7 @@ export default function ListItem({ result }) {
   return (
     <>
       {result.map((item, index) => (
-        <div className='list-item' key={index}>
+        <div className='list-item hover:bg-slate-100 list-none' key={index}>
           <Link prefetch={false} href={'/detail/' + result[index]._id}>
             <h4>{item.title}</h4>
           </Link>

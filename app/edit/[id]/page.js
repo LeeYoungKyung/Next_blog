@@ -15,11 +15,13 @@ export default async function Edit(props) {
           name='title'
           placeholder='title'
           defaultValue={result.title}
+          className='titleInput'
         ></input>
         <input
           name='content'
           placeholder='content'
           defaultValue={result.content}
+          className='contentInput'
         ></input>
         <input
           style={{ display: 'none' }}
@@ -27,7 +29,9 @@ export default async function Edit(props) {
           defaultValue={result._id.toString()}
         ></input>
 
-        <button type='submit'>수정</button>
+        <button type='submit' className=' hover:bg-slate-300'>
+          수정
+        </button>
       </form>
     </div>
   );
