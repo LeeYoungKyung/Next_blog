@@ -1,4 +1,14 @@
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
+
 export default function Write() {
+  // const yk = authOptions.CredentialsProvider.userInfo;
+  // console.log(yk);
+  // if (yk == null) {
+  //   return <>로그인하세요</>;
+  // } else {
+  //   return <>ddd</>;
+  // }
+  console.log(authOptions.providers);
   return (
     <div className='write-css'>
       <h4>daily</h4>
