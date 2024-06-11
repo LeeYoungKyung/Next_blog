@@ -2,7 +2,12 @@
 
 import Link from 'next/link';
 import DetailLink from './DetailLink';
+import { now } from 'next-auth/client/_utils';
 export default function ListItem({ result }) {
+  const data = new Date();
+
+  console.log('123123123', data);
+
   return (
     <>
       {result.map((item, index) => (
@@ -32,7 +37,7 @@ export default function ListItem({ result }) {
           >
             🗑️
           </span>
-          <p>날짜</p>
+          <p>dd</p>
         </div>
       ))}
     </>

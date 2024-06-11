@@ -14,35 +14,42 @@ export default function Comment(props) {
     fetch('/api/comment/list?id=' + props._id)
       .then((r) => r.json())
       .then((result) => {
-        console.log(result);
         setData(result);
       });
   }, []);
 
   return (
     <div>
-      <div>댓글목록 보여주는 부분</div>
-      <hr></hr>
-      {data.length > 0
-        ? data.map((a, i) => <p key={i}>{a.content}</p>)
-        : '댓글없음'}
-      <input
-        onChange={(e) => {
-          setComment(e.target.value);
-        }}
-      />
+      <div className=' h-3/4 w-5/6 overflow-y-scroll'>
+        <hr></hr>
+        {data.length > 0
+          ? data.map((a, i) => (
+              <p className='text-center' key={i}>
+                {a.content}
+              </p>
+            ))
+          : '댓글없음'}
+      </div>
+      <div className='flex justify-center'>
+        <input
+          className='m-1'
+          onChange={(e) => {
+            setComment(e.target.value);
+          }}
+        />
 
-      <button
-        onClick={() => {
-          fetch('/api/comment/new', {
-            method: 'POST',
-            body: JSON.stringify({ comment: comment, _id: props._id }),
-          });
-          //.then으로 댓글을 바로 뽑아서 보요주는 형태로
-        }}
-      >
-        전송
-      </button>
+        <button
+          className='m-1'
+          onClick={() => {
+            fetch('/api/comment/new', {
+              method: 'POST',
+              body: JSON.stringify({ comment: comment, _id: props._id }),
+            });
+          }}
+        >
+          전송
+        </button>
+      </div>
     </div>
   );
 }

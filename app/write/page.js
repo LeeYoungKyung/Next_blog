@@ -1,6 +1,7 @@
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import NotNull from './notNull';
+import './Write.css';
 
 export default async function Write() {
   let session = await getServerSession(authOptions);
@@ -9,21 +10,20 @@ export default async function Write() {
     return <NotNull></NotNull>;
   } else {
     return (
-      <div className='write-css'>
-        <h4>daily</h4>
-        <form action='/api/post/new' method='POST' className='w-[80%]'>
+      <div className='write-container'>
+        <h4 className='write-title'>daily</h4>
+        <form action='/api/post/new' method='POST' className='write-form'>
           <input
             name='title'
             placeholder='title'
-            className='titleInput'
-          ></input>
+            className='input-field titleInput'
+          />
           <input
             name='content'
             placeholder='content'
-            className='contentInput'
-          ></input>
-          {/* post랑 get만 사용가능  */}
-          <button type='submit' className=' hover:bg-slate-300'>
+            className='input-field contentInput'
+          />
+          <button type='submit' className='submit-button'>
             작성
           </button>
         </form>
