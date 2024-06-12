@@ -19,9 +19,12 @@ export default async function Detail(props) {
 
   return (
     <div>
-      <h4>상세페이지</h4>
-      <h4>{result.title}</h4>
-      <p>{result.content}</p>
+      <h4 className='text-center'>상세페이지</h4>
+      <div className='text-center bg-red-400 border'>
+        <h4>{result.title}</h4>
+        <p>{result.content}</p>
+      </div>
+
       <Comment _id={result._id.toString()}></Comment>
     </div>
   );
