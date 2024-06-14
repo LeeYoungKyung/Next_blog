@@ -1,9 +1,9 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function NotNull() {
+export default function ConnectAlert() {
   useEffect(() => {
-    alert('로그인을 해주세요');
+    alert('회원가입에 성공했습니다');
     window.location.href = '/';
   }, []);
 
