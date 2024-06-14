@@ -45,8 +45,7 @@ export const authOptions = {
           console.log('비번틀림');
           return null;
         }
-        const userInfo = user;
-        console.log('ffff', userInfo);
+
         return user;
       },
     }),
