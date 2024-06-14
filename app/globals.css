@@ -79,10 +79,7 @@ a {
   text-decoration: none;
   color: black;
 }
-.navbar {
-  background: white;
-  padding: 20px;
-}
+
 .navbar a {
   margin-right: 10px;
   text-decoration: none;
@@ -105,4 +102,30 @@ a {
   width: -webkit-fill-available;
   height: 30rem;
   border: inset;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem; /* Adjust padding as needed */
+}
+
+.logo {
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-right: 1rem; /* Adjust margin as needed */
+  text-decoration: none;
+  color: #000; /* Adjust color as needed */
+}
+
+.user-greeting {
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.5rem; /* Adjust gap as needed */
 }

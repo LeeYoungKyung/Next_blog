@@ -1,0 +1,57 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto 5px auto; /* 중앙 정렬을 위해 margin 조정 */
+  box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
+}
+
+.hr {
+  opacity: 60%;
+  width: 100%; /* hr 태그가 부모 요소의 너비를 차지하도록 설정 */
+}
+
+.sessionName {
+  text-align-last: end;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.inputButton {
+  display: flex;
+  justify-content: center;
+}
+.inputButton > * {
+  margin: 5px;
+}
+
+.comments {
+  display: flex; /* 중앙 정렬을 위해 flexbox 추가 */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  height: 30px;
+  margin: 0 auto 5px auto;
+  box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
+}
+
+.commentBox {
+  display: flex; /* 중앙 정렬을 위해 flexbox 추가 */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  width: 80%;
+  height: 18.75rem;
+  margin: 0 auto;
+}
