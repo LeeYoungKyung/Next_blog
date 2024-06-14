@@ -16,30 +16,29 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  let gitSession = await getServerSession(authOptions); ///회원 정보 가져오기
+  let gitSession = await getServerSession(authOptions); // 회원 정보 가져오기
   let kakaoSession = await getServerSession(authOptions);
 
   const session = gitSession || kakaoSession;
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <div className='navbar flex justify-between'>
-          <div>
+        <div className='navbar'>
+          <div className='nav-links'>
             <Link href='/' className='logo'>
-              MyBlog
+              놀러와요 우리집
             </Link>
             <Link href='/list'>List</Link>
             <Link href='/write'>Write</Link>
-            {/* jsx에서는 삼항 연산자 사용 가능  */}
           </div>
 
-          <div>
+          <div className='auth-section'>
             {session ? (
-              <span>
+              <span className='user-greeting'>
                 반갑습니다! {session.user.name} 님 <LogoutBtn />
               </span>
             ) : (
-              <div>
+              <div className='auth-buttons'>
                 <RegisterBtn /> <LoginBtn />
               </div>
             )}

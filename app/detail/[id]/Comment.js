@@ -20,17 +20,16 @@ export default function Comment(props) {
 
   return (
     <div>
-      <div className=' h-3/4 w-5/6 overflow-y-scroll'>
-        <hr></hr>
+      <div className='commentBox'>
         {data.length > 0
           ? data.map((a, i) => (
-              <p className='text-center' key={i}>
+              <p className='comments' key={i}>
                 {a.content}
               </p>
             ))
-          : '댓글없음'}
+          : '첫번째 댓글을 남겨주세요💗'}
       </div>
-      <div className='flex justify-center'>
+      <div className='inputButton'>
         <input
           className='m-1'
           onChange={(e) => {

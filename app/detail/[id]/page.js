@@ -4,11 +4,10 @@ import Comment from './Comment';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import NotNull from '@/app/write/notNull';
-// import './Detail.css';
+import './Detail.css';
 
 export default async function Detail(props) {
   let session = await getServerSession(authOptions);
-
   if (session == null) {
     return <NotNull></NotNull>;
   }
@@ -16,13 +15,15 @@ export default async function Detail(props) {
   let result = await db
     .collection('post')
     .findOne({ _id: new ObjectId(props.params.id) });
-
+  console.log(result);
   return (
     <div>
-      <h4 className='text-center'>상세페이지</h4>
       <div className='text-center bg-red-400 border'>
-        <h4>{result.title}</h4>
-        <p>{result.content}</p>
+        <div className='result'>
+          <h4>{result.title}</h4>
+          <hr className='hr'></hr>
+          <p>{result.content}</p>
+        </div>
       </div>
 
       <Comment _id={result._id.toString()}></Comment>
