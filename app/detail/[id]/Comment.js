@@ -19,7 +19,7 @@ export default function Comment(props) {
   }, []);
 
   return (
-    <div>
+    <div className='bg'>
       <div className='commentBox'>
         {data.length > 0
           ? data.map((a, i) => (
@@ -31,7 +31,7 @@ export default function Comment(props) {
       </div>
       <div className='inputButton'>
         <input
-          className='m-1'
+          className='m-1 z-50'
           onChange={(e) => {
             setComment(e.target.value);
           }}

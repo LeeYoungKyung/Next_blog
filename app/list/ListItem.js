@@ -6,8 +6,6 @@ import { now } from 'next-auth/client/_utils';
 export default function ListItem({ result }) {
   const data = new Date();
 
-  console.log('123123123', data);
-
   return (
     <>
       {result.map((item, index) => (
@@ -15,7 +13,9 @@ export default function ListItem({ result }) {
           <Link prefetch={false} href={'/detail/' + result[index]._id}>
             <h4>{item.title}</h4>
           </Link>
-          <Link href={'/edit/' + result[index]._id}>✏️</Link>
+          <Link href={'/edit/' + result[index]._id} className='edit'>
+            ✏️
+          </Link>
           {/* ajax를 사용하는데 이건 client에서만 사용이 가능함 : form으로 요청시 항상 새로고침 하지만 이건아님*/}
           <span
             onClick={(e) => {
@@ -37,7 +37,6 @@ export default function ListItem({ result }) {
           >
             🗑️
           </span>
-          <p>dd</p>
         </div>
       ))}
     </>

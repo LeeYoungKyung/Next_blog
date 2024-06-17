@@ -5,11 +5,12 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import NotNull from '@/app/write/notNull';
 import './Detail.css';
+import { Didact_Gothic } from 'next/font/google';
 
 export default async function Detail(props) {
   let session = await getServerSession(authOptions);
   if (session == null) {
-    return <NotNull></NotNull>;
+    return <NotNull />;
   }
   const db = (await connectDB).db('forum');
   let result = await db
@@ -17,16 +18,19 @@ export default async function Detail(props) {
     .findOne({ _id: new ObjectId(props.params.id) });
   console.log(result);
   return (
-    <div>
-      <div className='text-center bg-red-400 border'>
-        <div className='result'>
-          <h4>{result.title}</h4>
-          <hr className='hr'></hr>
-          <p>{result.content}</p>
+    <div className='detail-container'>
+      <div className='op'>
+        <div className='text-center'>
+          <div className='result'>
+            <h4>{result.title}</h4>
+            <hr className='hr' />
+            <p>{result.content}</p>
+          </div>
         </div>
+        <Comment _id={result._id.toString()} className='ment' />
       </div>
 
-      <Comment _id={result._id.toString()}></Comment>
+      <img src='/nonText.png' className='background-image' alt='Background' />
     </div>
   );
 }

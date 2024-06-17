@@ -7,5 +7,9 @@ export default async function Home() {
   const db = client.db('forum');
   let result = await db.collection('post').find().toArray();
 
-  return <div></div>;
+  return (
+    <div>
+      <img src='./main.png' className='mainBG'></img>
+    </div>
+  );
 }
