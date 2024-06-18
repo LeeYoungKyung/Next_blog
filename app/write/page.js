@@ -2,6 +2,7 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import NotNull from './notNull';
 import './Write.css';
+import WriteBtn from './WriteBtn';
 
 export default async function Write() {
   let session = await getServerSession(authOptions);
@@ -11,7 +12,8 @@ export default async function Write() {
   } else {
     return (
       <div className='write-container'>
-        <h4 className='write-title'>daily</h4>
+        <img src='./nonText.png' className='bg'></img>
+        <h4 className='write-title'>방문록🍀</h4>
         <form action='/api/post/new' method='POST' className='write-form'>
           <input
             name='title'

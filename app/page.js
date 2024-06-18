@@ -1,6 +1,8 @@
 import { connectDB } from '@/util/database';
 import { MongoClient } from 'mongodb';
+
 import Link from 'next/link';
+import Main from './Main';
 
 export default async function Home() {
   const client = await connectDB;

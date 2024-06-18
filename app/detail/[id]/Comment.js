@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import './Detail.css';
 
 export default function Comment(props) {
   let [comment, setComment] = useState('');
@@ -19,7 +20,7 @@ export default function Comment(props) {
   }, []);
 
   return (
-    <div className='bg'>
+    <div className='bg bg-blue-50'>
       <div className='commentBox'>
         {data.length > 0
           ? data.map((a, i) => (

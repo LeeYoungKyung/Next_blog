@@ -29,8 +29,6 @@ export default async function Detail(props) {
         </div>
         <Comment _id={result._id.toString()} className='ment' />
       </div>
-
-      <img src='/nonText.png' className='background-image' alt='Background' />
     </div>
   );
 }
